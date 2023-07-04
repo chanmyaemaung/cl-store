@@ -29,6 +29,19 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        // Custom logic for admin and vendor
+        $admin = $request->user()->role === 'admin';
+        $vendor = $request->user()->role === 'vendor';
+
+        if ($admin) {
+            return redirect()->intended('/admin/dashboard');
+        }
+
+        if ($vendor) {
+            return redirect()->intended('/vendor/dashboard');
+        }
+        // End custom logic
+
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
