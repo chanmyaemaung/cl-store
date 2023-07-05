@@ -32,6 +32,17 @@
 <script src="{{ asset('frontend/js/venobox.min.js') }}"></script>
 <!--classycountdown js-->
 <script src="{{ asset('frontend/js/jquery.classycountdown.js') }}"></script>
+<!-- Toastr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <!--main/custom js-->
 <script src="{{ asset('frontend/js/main.js') }}"></script>
+
+<!-- Custom js -->
+<script>
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            toastr.error('{{ $error }}');
+        @endforeach
+    @endif
+</script>

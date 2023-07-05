@@ -15,3 +15,6 @@
 <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
 <!-- <link rel="stylesheet" href="css/rtl.css"> -->
+
+<!-- Toaster CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">

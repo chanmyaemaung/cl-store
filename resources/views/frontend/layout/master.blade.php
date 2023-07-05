@@ -10,6 +10,13 @@
     <link rel="icon" type="image/png" href="{{ asset('frontend/images/favicon.png') }}">
 
     @include('frontend.layout.styles')
+
+    <style>
+        /* Fix Breadcrumb Font Icon */
+        #wsus__breadcrumb ul li a::after {
+            font-family: "Font Awesome 5 Pro" !important;
+        }
+    </style>
 </head>
 
 <body>
