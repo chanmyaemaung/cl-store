@@ -44,8 +44,9 @@ class ProfileController extends Controller
             $user->save();
         }
 
+        toastr()->success('Profile updated successfully!');
 
-        return redirect()->back()->with('success', 'Profile updated successfully');
+        return redirect()->back();
     } // End of updateProfile
 
     function updatePassword(Request $request)
@@ -59,6 +60,8 @@ class ProfileController extends Controller
             'password' => bcrypt($request->password)
         ]);
 
-        return redirect()->back()->with('success', 'Password updated successfully');
+        toastr()->success('Password updated successfully!');
+
+        return redirect()->back();
     } // End of updatePassword
 }

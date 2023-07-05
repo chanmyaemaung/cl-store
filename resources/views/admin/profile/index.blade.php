@@ -36,13 +36,13 @@
                                     <div class="form-group col-md-6 col-12">
                                         <label for="name">Name</label>
                                         <input type="text" id="name" name="name" value="{{ Auth::user()->name }}"
-                                            class="form-control" required />
+                                            class="form-control" />
                                     </div>
 
                                     <div class="form-group col-md-6 col-12">
                                         <label for="email">Email</label>
                                         <input type="text" name="email" id="email"
-                                            value="{{ Auth::user()->email }}" class="form-control" required />
+                                            value="{{ Auth::user()->email }}" class="form-control" />
                                     </div>
                                 </div>
                             </div>
@@ -57,13 +57,8 @@
                 <!-- begin::Second Card -->
                 <div class="col-12 col-md-12 col-lg-7">
                     <div class="card">
-                        @if ($errors->any())
-                            @foreach ($errors->all() as $error)
-                                <span class="alert alert-danger">{{ $error }}</span>
-                            @endforeach
-                        @endif
-
-                        <form action="{{ route('admin.password.update') }}" method="post" class="needs-validation">
+                        <form action="{{ route('admin.password.update') }}" method="post" class="needs-validation"
+                            novalidate>
                             @csrf
 
                             <div class="card-header">
@@ -76,19 +71,18 @@
                                         <div class="form-group col-12">
                                             <label for="current_password">Current Password</label>
                                             <input type="password" id="current_password" name="current_password"
-                                                class="form-control" required />
+                                                class="form-control" />
                                         </div>
 
                                         <div class="form-group col-12">
                                             <label for="password">New Password</label>
-                                            <input type="password" id="password" name="password" class="form-control"
-                                                required />
+                                            <input type="password" id="password" name="password" class="form-control" />
                                         </div>
 
                                         <div class="form-group col-12">
                                             <label for="password_confirmation">Confirm Password</label>
                                             <input type="password" id="password_confirmation" name="password_confirmation"
-                                                class="form-control" required />
+                                                class="form-control" />
                                         </div>
                                     </div>
                                 </div>

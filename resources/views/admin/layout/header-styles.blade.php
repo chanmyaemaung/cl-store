@@ -11,3 +11,6 @@
 <!-- Template CSS -->
 <link rel="stylesheet" href="{{ asset('backend/assets/css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('backend/assets/css/components.css') }}">
+
+<!-- Toaster CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
