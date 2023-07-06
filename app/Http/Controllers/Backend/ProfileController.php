@@ -33,18 +33,19 @@ class ProfileController extends Controller
             }
 
             $image = $request->image;
-            $imageName = rand() . '_' . $image->getClientOriginalName();
+            $imageName = rand() . '_' . 'admin_' . $image->getClientOriginalName();
             $image->move(public_path('uploads'), $imageName);
 
             $imagePath = "/uploads/" . $imageName;
 
-            $user->name = $request->name;
-            $user->email = $request->email;
             $user->image = $imagePath;
-            $user->save();
         }
 
-        toastr()->success('Profile updated successfully!');
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->save();
+
+        toastr()->success('Admin Profile updated successfully!');
 
         return redirect()->back();
     } // End of updateProfile
