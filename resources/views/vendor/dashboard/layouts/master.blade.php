@@ -6,10 +6,10 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>CL Store &mdash; User Dashboard</title>
+    <title>CL Store &mdash; Vendor Dashboard</title>
     <link rel="icon" type="image/png" href="{{ asset('frontend/images/favicon.png') }}">
 
-    @include('frontend.dashboard.layouts.styles')
+    @include('vendor.dashboard.layouts.styles')
 </head>
 
 <body>
@@ -45,7 +45,7 @@
   ==============================-->
 
 
-    @include('frontend.dashboard.layouts.scripts')
+    @include('vendor.dashboard.layouts.scripts')
 </body>
 
 </html>
