@@ -46,6 +46,14 @@
 
 
     @include('frontend.dashboard.layouts.scripts')
+
+    <script>
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                toastr.error('{{ $error }}');
+            @endforeach
+        @endif
+    </script>
 </body>
 
 </html>
