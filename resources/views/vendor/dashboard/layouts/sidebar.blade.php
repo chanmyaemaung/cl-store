@@ -11,7 +11,7 @@
         <li><a href="#"><i class="far fa-cloud-download-alt"></i> Downloads</a></li>
         <li><a href="#><i class="far fa-star"></i> Reviews</a></li>
         <li><a href="#"><i class="far fa-heart"></i> Wishlist</a></li>
-        <li><a href="#"><i class="far fa-user"></i> My Profile</a></li>
+        <li><a href="{{ route('vendor.profile') }}"><i class="far fa-user"></i> My Profile</a></li>
         <li><a href="#"><i class="fal fa-gift-card"></i> Addresses</a></li>
         <li>
             <!-- Authentication -->
