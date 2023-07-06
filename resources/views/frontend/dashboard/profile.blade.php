@@ -79,7 +79,8 @@
 
                                 <!-- begin::Update Password -->
                                 <div class="row mt-3">
-                                    <form action="" method="POST">
+                                    <h4>Update Password</h4>
+                                    <form action="{{ route('user.profile.update.password') }}" method="POST">
                                         @csrf
 
                                         <div class="wsus__dash_pass_change">
@@ -87,19 +88,21 @@
                                                 <div class="col-xl-4 col-md-6">
                                                     <div class="wsus__dash_pro_single">
                                                         <i class="fas fa-unlock-alt"></i>
-                                                        <input type="password" placeholder="Current Password">
+                                                        <input type="password" name="current_password"
+                                                            placeholder="Current Password">
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-4 col-md-6">
                                                     <div class="wsus__dash_pro_single">
                                                         <i class="fas fa-lock-alt"></i>
-                                                        <input type="password" placeholder="New Password">
+                                                        <input type="password" name="password" placeholder="New Password">
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-4">
                                                     <div class="wsus__dash_pro_single">
                                                         <i class="fas fa-lock-alt"></i>
-                                                        <input type="password" placeholder="Confirm Password">
+                                                        <input type="password" name="password_confirmation"
+                                                            placeholder="Confirm Password">
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-12">
