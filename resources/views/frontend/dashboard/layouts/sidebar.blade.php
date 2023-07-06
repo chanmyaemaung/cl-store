@@ -3,10 +3,10 @@
         <i class="far fa-bars dash_bar"></i>
         <i class="far fa-times dash_close"></i>
     </span>
-    <a href="{{ route('dashboard') }}" class="dash_logo"><img src="{{ asset('frontend/images/logo.png') }}" alt="logo"
+    <a href="{{ route('user.dashboard') }}" class="dash_logo"><img src="{{ asset('frontend/images/logo.png') }}" alt="logo"
             class="img-fluid"></a>
     <ul class="dashboard_link">
-        <li><a class="active" href="{{ route('dashboard') }}"><i class="fas fa-tachometer"></i>Dashboard</a></li>
+        <li><a class="active" href="{{ route('user.dashboard') }}"><i class="fas fa-tachometer"></i>Dashboard</a></li>
         <li><a href="#"><i class="fas fa-list-ul"></i> Orders</a></li>
         <li><a href="#"><i class="far fa-cloud-download-alt"></i> Downloads</a></li>
         <li><a href="#><i class="far fa-star"></i> Reviews</a></li>
