@@ -26,7 +26,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form action="" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('admin.slider.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="form-group">
@@ -48,13 +48,13 @@
 
                                 <div class="form-group">
                                     <label for="sliderStartingPrice">Starting Price</label>
-                                    <input type="text" name="price" value="{{ old('price') }}"
+                                    <input type="text" name="starting_price" value="{{ old('starting_price') }}"
                                         id="sliderStartingPrice" class="form-control" />
                                 </div>
 
                                 <div class="form-group">
                                     <label for="sliderButtonUrl">Button URL</label>
-                                    <input type="url" name="url" value="{{ old('url') }}" id="sliderButtonUrl"
+                                    <input type="url" name="btn_url" value="{{ old('btn_url') }}" id="sliderButtonUrl"
                                         class="form-control" />
                                 </div>
 
@@ -67,8 +67,8 @@
                                 <div class="form-group">
                                     <label for="sliderStatus">Status</label>
                                     <select name="status" id="sliderStatus" class="form-control">
-                                        <option selected="">Active</option>
-                                        <option>Inactive</option>
+                                        <option value="1" selected>Active</option>
+                                        <option value="0">Inactive</option>
                                     </select>
                                 </div>
 
