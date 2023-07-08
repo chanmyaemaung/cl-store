@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Slider;
+use App\Traits\ImageUploadTrait;
 use Illuminate\Http\Request;
 
 class SliderController extends Controller
 {
+    use ImageUploadTrait;
+
     /**
      * Display a listing of the resource.
      */
@@ -30,7 +33,7 @@ class SliderController extends Controller
     public function store(Request $request, Slider $slider)
     {
         $request->validate([
-            // 'banner' => ['required', 'max:2000', 'mimes:png,jpg,jpeg,gif,svg,webp'],
+            'banner' => ['required', 'max:2000', 'mimes:png,jpg,jpeg,gif,svg,webp'],
             'type' => ['string', 'max:255'],
             'title' => ['required', 'max:255'],
             'starting_price' => ['max:255'],
@@ -39,6 +42,10 @@ class SliderController extends Controller
             'status' => ['required', 'boolean']
         ]);
 
+        /** Handele file upload */
+        $imagePath = $this->uploadImage($request, 'banner', 'uploads', 'slider_');
+
+        $slider->banner = $imagePath;
         $slider->type = $request->type;
         $slider->title = $request->title;
         $slider->starting_price = $request->starting_price;
@@ -49,7 +56,7 @@ class SliderController extends Controller
 
         toastr('Slider created successfully!', 'success');
 
-        return redirect()->back();
+        return redirect()->route('admin.slider.index');
     }
 
     /**
